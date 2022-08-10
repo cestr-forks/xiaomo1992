@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.9.0"><link rel="manifest" href="/manifest.json">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="小莫">
+<meta name="baidu-site-verification" content="qp2dTXVqvj">
+<link href="https://image.xiaomo.info/blog/assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<meta name="keywords" content="小莫的博客, java, 日语, 动漫, 技术, unity3d, nginx, https, angular, 游戏, 服务器, tomcat, IDEA, javaweb, spring, hibernate, spring boot, 开源中国, github, linux, 主程">
+
+
+<meta name="description" content="最近这一年一直在用vue写前端，虽然一直很想用react，但是因为业务所限不可能花大量的时候去用react重写，只有在新项目的时候才有可能重新做技术选项。公司之前的技术类型比较多，最近开始统一成前端react，后端go/node，这样互相交流起来比较容易。">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从0搭建一个react开发的脚手架">
+<meta property="og:url" content="https://blog.xiaomo.info/2021/reactProject/index.html">
+<meta property="og:site_name" content="小莫的博客-fighting(技术分享、生活随笔)">
+<meta property="og:description" content="最近这一年一直在用vue写前端，虽然一直很想用react，但是因为业务所限不可能花大量的时候去用react重写，只有在新项目的时候才有可能重新做技术选项。公司之前的技术类型比较多，最近开始统一成前端react，后端go/node，这样互相交流起来比较容易。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://image.xiaomo.info/blog/image-20210907151025364.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/image-20210907151509301.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/image-20210907152148011.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/image-20210907152327173.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/blogblogblogblogimage-20210907142954421.png">
+<meta property="og:updated_time" content="2022-08-10T23:53:17.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从0搭建一个react开发的脚手架">
+<meta name="twitter:description" content="最近这一年一直在用vue写前端，虽然一直很想用react，但是因为业务所限不可能花大量的时候去用react重写，只有在新项目的时候才有可能重新做技术选项。公司之前的技术类型比较多，最近开始统一成前端react，后端go/node，这样互相交流起来比较容易。">
+<meta name="twitter:image" content="https://image.xiaomo.info/blog/image-20210907151025364.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="小莫的博客-fighting(技术分享、生活随笔)" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="//image.xiaomo.info/logo/avatar.png">
+
+
+
+    <link href="https://image.xiaomo.info/blog/assets/css/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="https://image.xiaomo.info/blog/assets/css/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="https://image.xiaomo.info/blog/assets/js/pace.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="https://image.xiaomo.info/blog/assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>从0搭建一个react开发的脚手架 | 小莫的博客-fighting(技术分享、生活随笔)</title>
+
+<script src="https://image.xiaomo.info/blog/assets/js/jquery.min.js"></script>
+<script src="https://image.xiaomo.info/blog/assets/js/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "https://image.xiaomo.info/blog/assets/js/jquery.fancybox.min.js",
+        scrollreveal: "https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "https://image.xiaomo.info/blog/assets/js/jquery-ui.min.js", "https://image.xiaomo.info/blog/assets/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+</html>
+<body oncontextmenu="return false" onselectstart="return false">
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="https://blog.xiaomo.info" target="_self" class="profilepic">
+            <img src="//image.xiaomo.info/logo/avatar.png" alt="logo" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">小莫</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">行百里者半九十</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="//xiaomo.info">回到主站</a></li>
+                        
+                            <li><a href="/tags/japan/">日本生活系列</a></li>
+                        
+                            <li><a href="/tags/summary/">年度总结系列</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/about.html">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="mailto:xiaomo@xiaomo.info" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=83387856&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/xiaomoinfo" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="external nofollow" href="https://www.zhihu.com/people/xiaomoinfo" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK源码系列/">JDK源码系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OCJP/">OCJP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alime/">alime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doTween/">doTween</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es5/">es5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/japan/">japan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lombok/">lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nuxt/">nuxt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onenote/">onenote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/">postman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rxjs/">rxjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stackoverflow/">stackoverflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swagger/">swagger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/">technology</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ugui/">ugui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/习惯/">习惯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动漫/">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体/">字体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/容器/">容器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码系列/">源码系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">技术宅、 杭州、 夜猫子、 爱动漫、 爱日语 2015年毕业、 java开发、 web前端、 前沿技术发烧友、 生命不息折腾不止、</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">小莫</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="//image.xiaomo.info/logo/avatar.png" alt="logo" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">小莫</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">行百里者半九十</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="//xiaomo.info">回到主站</a></li>
+                
+                    <li><a href="/tags/japan/">日本生活系列</a></li>
+                
+                    <li><a href="/tags/summary/">年度总结系列</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/about.html">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="mailto:xiaomo@xiaomo.info" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=83387856&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/xiaomoinfo" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="external nofollow" href="https://www.zhihu.com/people/xiaomoinfo" title="知乎"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><style>
+    .background-cover {
+        float: left;
+        width: 400px;
+        height: 250px;
+    }
+
+    .article img {
+        margin: -1px 20px 5px -1px;
+        border-top-left-radius: 3px;
+        -webkit-border-radius-topleft: 3%;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    /*.article img:hover{*/
+    /*transform: scale(1, 1.05);*/
+    /*-webkit-transition:all 0.5s;*/
+    /*-moz-transition:all 0.5s;*/
+    /*-o-transition:all 0.5s;*/
+    /*}*/
+</style>
+
+
+<article id="post-reactProject" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        function getPgjs() {
+            const agent = navigator.userAgent.toLowerCase()
+            let res = agent.match(/android/)
+            if (res === "android")
+                return res;
+            res = agent.match(/iphone/);
+            if (res === "iphone")
+                return "ios";
+            res = agent.match(/ipad/);
+            if (res === "ipad")
+                return "ios";
+            res = agent.match(/windows/);
+            if (res === "windows")
+                return "wp";
+            console.info('pc......')
+            return "pc";
+        }
+
+        function loadImage(id) {
+            const page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                return;
+            }
+            var backgroundnum = 40;
+            var randomIndex = Math.ceil(Math.random() * backgroundnum);
+            var result = randomIndex + "?version=" + (new Date() / 1000);
+            var backgroundimg = "https://image.xiaomo.info/cover/bg-number.jpg".replace(/number/gi, randomIndex);
+            var key = "#" + id;
+            $(key).attr("src", backgroundimg);
+            $(".background-cover").show();
+        }
+
+        (function () {
+            const page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                console.log(page)
+                $(".background-cover").hide();
+            }
+        })()
+    </script>
+    
+    <div class="article-meta">
+        <a href="/2021/reactProject/" class="article-date">
+      <time datetime="2021-09-07T00:00:00.000Z" itemprop="datePublished">2021-09-07</time>
+</a>
+    </div>
+    
+    <div class="article-inner">
+        
+        <input type="hidden" class="isFancy"/>
+        
+        <div class="background-cover">
+            <img class="fengmian-image" id="reactProject" src="https://image.xiaomo.info/cover/bg-5.jpg" alt="封面" onload="loadImage(this.id)"/>
+        </div>
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      从0搭建一个react开发的脚手架
+    </h1>
+  
+
+        </header>
+        
+        <div class="article-info article-info-post">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul> </div>
+
+
+
+            <!-- 访问量  -->
+            <!--<span id="busuanzi_container_page_pv" style='display:none'>-->
+            <!--<span id="page-visit"><i class="fa fa-eye" style="float: left;margin-top:5px" aria-hidden="true" title="文章访问量"></i>-->
+            <!--<span id="busuanzi_value_page_pv"></span>-->
+            <!--</span>-->
+            <!--</span>-->
+
+            <div class="clearfix"></div>
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+            
+            <p>最近这一年一直在用vue写前端，虽然一直很想用react，但是因为业务所限不可能花大量的时候去用react重写，只有在新项目的时候才有可能重新做技术选项。公司之前的技术类型比较多，最近开始统一成前端react，后端go/node，这样互相交流起来比较容易。</p>
+<a id="more"></a>
+
+<p>为了快捷的开发新项目，我维护了一套<a href="https://github.com/reactZone/vite-react-ts-template" target="_blank" rel="noopener">react脚手架模板</a>，开新项目的时候可以快速的以此模板开始业务逻辑，它的特性有：</p>
+<ul>
+<li>vite作为构建工具，复杂度比webpack低，但速度却比webpack快很多</li>
+<li>支持hmr,修改代码页面无缝更新</li>
+<li>以typescript为开发语言，有类型约束不会写出难以查找的bug</li>
+<li>支持别名@到根目录，@@到components目录</li>
+<li>支持国际化，默认写了中文、英文、日语3种语言</li>
+<li>配置了eslint，使用<code>yarn fix</code>可以自动修复代码格式问题</li>
+<li>采用了tailwind作为开发的css样式框架，外加tailwind-classnames约束样式名字。</li>
+<li>配置了多环境，默认为local、stg、prod3个环境，如果有特殊需求可根据需要扩展</li>
+<li>状态管理采用redux-tool-kit，没有繁琐的redux流程(action、reducer等)，一个slice文件就是一个业务模块。</li>
+<li>带一个todoList的demo，列举了react-router-dom相关用法</li>
+</ul>
+<p>目录结构</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">├── envs                          多环境配置文件</span><br><span class="line">└── src                           工程核心代码</span><br><span class="line">    ├── assets                    资源文件</span><br><span class="line">    │   ├── i18n                     国际化翻译文件</span><br><span class="line">    │   ├── images                   图片资源</span><br><span class="line">    │   └── styles                   全局样式</span><br><span class="line">    ├── components                 组件</span><br><span class="line">    │   ├── CHeader                  头部</span><br><span class="line">    │   └── Common                 通用组件</span><br><span class="line">    │       ├── CButton</span><br><span class="line">    │       ├── CContainer</span><br><span class="line">    │       ├── CFullLoading</span><br><span class="line">    │       ├── CInput</span><br><span class="line">    │       ├── CLink</span><br><span class="line">    │       ├── CNavLink</span><br><span class="line">    │       └── CPartialLoading</span><br><span class="line">    ├── i18n                         国际化代码实现</span><br><span class="line">    ├── redux                        状态管理(slice和store)</span><br><span class="line">    ├──<span class="built_in"> service </span>                     业务服务(http交互)</span><br><span class="line">    ├── utils                        通用方法</span><br><span class="line">    └── views                        页面</span><br><span class="line">        ├── <span class="builtin-name">Add</span>                        添加todo</span><br><span class="line">        ├── Home                       todoList</span><br><span class="line">        ├── Login                      登陆页面</span><br><span class="line">        ├── NotFound                   404</span><br><span class="line">        └── Task                       taskList</span><br><span class="line">├── tsconfig.json                     ts配置</span><br><span class="line">├── vite.config.ts                    vite配置</span><br><span class="line">├── .eslintrc.js                      eslint配置</span><br><span class="line">├── README.md                         项目说明文件</span><br><span class="line">├── index.html                        项目入口文件</span><br><span class="line">├── node_modules                      项目依赖包</span><br><span class="line">├── package.json                      项目依赖声明文件</span><br><span class="line">├── .env                              本地环境（如果没有的话会使用envs/.env.local）</span><br><span class="line">└── yarn.lock                         yarn文件锁</span><br></pre></td></tr></table></figure>
+
+<h2 id="依赖库介绍"><a href="#依赖库介绍" class="headerlink" title="依赖库介绍"></a>依赖库介绍</h2><h4 id="核心框架"><a href="#核心框架" class="headerlink" title="核心框架"></a>核心框架</h4><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"react"</span>: <span class="string">"^17.0.2"</span>,</span><br><span class="line"><span class="string">"react-dom"</span>: <span class="string">"^17.0.2"</span>,</span><br><span class="line"><span class="string">"react-router-dom"</span>: <span class="string">"^5.2.0"</span>,</span><br></pre></td></tr></table></figure>
+
+<h4 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h4><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"react-i18next"</span>: <span class="string">"^11.11.4"</span>,</span><br><span class="line"><span class="string">"i18next"</span>: <span class="string">"^20.4.0"</span>,</span><br><span class="line"><span class="string">"i18next-browser-languagedetector"</span>: <span class="string">"^6.1.2"</span>,</span><br></pre></td></tr></table></figure>
+
+<h4 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h4><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="string">"react-loading"</span>: <span class="string">"^2.0.3"</span>,</span><br><span class="line"><span class="string">"@fortawesome/fontawesome-svg-core"</span>: <span class="string">"^1.2.36"</span>,</span><br><span class="line"><span class="string">"@fortawesome/free-solid-svg-icons"</span>: <span class="string">"^5.15.4"</span>,</span><br><span class="line"><span class="string">"@fortawesome/react-fontawesome"</span>: <span class="string">"^0.1.15"</span>,</span><br></pre></td></tr></table></figure>
+
+<h4 id="环境相关"><a href="#环境相关" class="headerlink" title="环境相关"></a>环境相关</h4><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="string">"vite"</span>: <span class="string">"^2.5.0"</span>,</span><br><span class="line"><span class="string">"@vitejs/plugin-react-refresh"</span>: <span class="string">"^1.3.6"</span>,</span><br><span class="line"><span class="string">"typescript"</span>: <span class="string">"^4.3.5"</span>,</span><br><span class="line"><span class="string">"cross-env"</span>: <span class="string">"^7.0.3"</span>,</span><br><span class="line"><span class="string">"@types/node"</span>: <span class="string">"^16.7.12"</span>,</span><br><span class="line"><span class="string">"@types/react"</span>: <span class="string">"^17.0.18"</span>,</span><br><span class="line"><span class="string">"@types/react-dom"</span>: <span class="string">"^17.0.9"</span>,</span><br><span class="line"><span class="string">"@typescript-eslint/eslint-plugin"</span>: <span class="string">"^4.29.2"</span>,</span><br><span class="line"><span class="string">"@typescript-eslint/parser"</span>: <span class="string">"^4.29.2"</span>,</span><br><span class="line"><span class="string">"@types/react-router-dom"</span>: <span class="string">"^5.1.8"</span>,</span><br></pre></td></tr></table></figure>
+
+<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="string">"@reduxjs/toolkit"</span>: <span class="string">"^1.6.1"</span>,</span><br><span class="line"><span class="string">"redux"</span>: <span class="string">"^4.1.1"</span>,</span><br><span class="line"><span class="string">"react-redux"</span>: <span class="string">"^7.2.4"</span>,</span><br><span class="line"><span class="string">"redux-thunk"</span>: <span class="string">"^2.3.0"</span>,</span><br><span class="line"><span class="string">"redux-devtools-extension"</span>: <span class="string">"^2.13.9"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="css框架"><a href="#css框架" class="headerlink" title="css框架"></a>css框架</h4><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"tailwindcss-classnames"</span>: <span class="string">"^2.2.3"</span>,</span><br><span class="line"><span class="string">"autoprefixer"</span>: <span class="string">"^10.3.3"</span>,</span><br><span class="line"><span class="string">"postcss"</span>: <span class="string">"^8.3.6"</span>,</span><br><span class="line"><span class="string">"tailwindcss"</span>: <span class="string">"^2.2.9"</span>,</span><br><span class="line"><span class="string">"variables"</span>: <span class="string">"^1.0.1"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="eslint相关"><a href="#eslint相关" class="headerlink" title="eslint相关"></a>eslint相关</h4><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"eslint-config-airbnb"</span>: <span class="string">"^18.2.1"</span>,</span><br><span class="line"><span class="string">"eslint-config-prettier"</span>: <span class="string">"^8.3.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-import"</span>: <span class="string">"^2.24.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-jsx-a11y"</span>: <span class="string">"^6.4.1"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-react"</span>: <span class="string">"^7.24.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-prettier"</span>: <span class="string">"^3.4.0"</span>,</span><br><span class="line"><span class="string">"eslint-plugin-react-hooks"</span>: <span class="string">"^4.2.0"</span>,</span><br><span class="line"><span class="string">"prettier"</span>: <span class="string">"^2.3.2"</span>,</span><br></pre></td></tr></table></figure>
+
+<h4 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h4><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"redaxios"</span>: <span class="string">"^0.4.1"</span>,</span><br><span class="line"><span class="string">"qs"</span>: <span class="string">"^6.10.1"</span>,</span><br></pre></td></tr></table></figure>
+
+<h2 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="string">"dev"</span>: <span class="string">"cross-env NODE_ENV=local vite --host"</span>,  </span><br><span class="line"><span class="string">"dev:stg"</span>: <span class="string">"cross NODE_ENV=stg vite"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"vite build"</span>,</span><br><span class="line"><span class="string">"build:stg"</span>: <span class="string">"cross-env vite build --mode test"</span>,</span><br><span class="line"><span class="string">"build:prod"</span>: <span class="string">"cross-env vite build --mode production"</span>,</span><br><span class="line"><span class="string">"serve"</span>: <span class="string">"vite preview"</span>,</span><br><span class="line"><span class="string">"lint"</span>: <span class="string">"eslint --ext .jsx,.js,.ts,.tsx ."</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完整package-json"><a href="#完整package-json" class="headerlink" title="完整package.json"></a>完整package.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"vite-react-teamplate"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.1"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"dev"</span>: <span class="string">"cross-env NODE_ENV=local vite --host"</span>,</span><br><span class="line">    <span class="attr">"dev:stg"</span>: <span class="string">"cross NODE_ENV=stg vite"</span>,</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"vite build"</span>,</span><br><span class="line">    <span class="attr">"build:stg"</span>: <span class="string">"cross-env vite build --mode test"</span>,</span><br><span class="line">    <span class="attr">"build:prod"</span>: <span class="string">"cross-env vite build --mode production"</span>,</span><br><span class="line">    <span class="attr">"serve"</span>: <span class="string">"vite preview"</span>,</span><br><span class="line">    <span class="attr">"lint"</span>: <span class="string">"eslint --ext .jsx,.js,.ts,.tsx ."</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"react"</span>: <span class="string">"^17.0.2"</span>,</span><br><span class="line">    <span class="attr">"react-dom"</span>: <span class="string">"^17.0.2"</span>,</span><br><span class="line">    <span class="attr">"react-router-dom"</span>: <span class="string">"^5.2.0"</span>,</span><br><span class="line">    <span class="attr">"react-i18next"</span>: <span class="string">"^11.11.4"</span>,</span><br><span class="line">    <span class="attr">"i18next"</span>: <span class="string">"^20.4.0"</span>,</span><br><span class="line">    <span class="attr">"i18next-browser-languagedetector"</span>: <span class="string">"^6.1.2"</span>,</span><br><span class="line">    <span class="attr">"react-loading"</span>: <span class="string">"^2.0.3"</span>,</span><br><span class="line">    <span class="attr">"@fortawesome/fontawesome-svg-core"</span>: <span class="string">"^1.2.36"</span>,</span><br><span class="line">    <span class="attr">"@fortawesome/free-solid-svg-icons"</span>: <span class="string">"^5.15.4"</span>,</span><br><span class="line">    <span class="attr">"@fortawesome/react-fontawesome"</span>: <span class="string">"^0.1.15"</span>,</span><br><span class="line">    <span class="attr">"redaxios"</span>: <span class="string">"^0.4.1"</span>,</span><br><span class="line">    <span class="attr">"qs"</span>: <span class="string">"^6.10.1"</span>,</span><br><span class="line">    <span class="attr">"@reduxjs/toolkit"</span>: <span class="string">"^1.6.1"</span>,</span><br><span class="line">    <span class="attr">"redux"</span>: <span class="string">"^4.1.1"</span>,</span><br><span class="line">    <span class="attr">"react-redux"</span>: <span class="string">"^7.2.4"</span>,</span><br><span class="line">    <span class="attr">"redux-thunk"</span>: <span class="string">"^2.3.0"</span>,</span><br><span class="line">    <span class="attr">"tailwindcss"</span>: <span class="string">"^2.2.9"</span>,</span><br><span class="line">    <span class="attr">"variables"</span>: <span class="string">"^1.0.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"vite"</span>: <span class="string">"^2.5.0"</span>,</span><br><span class="line">    <span class="attr">"@vitejs/plugin-react-refresh"</span>: <span class="string">"^1.3.6"</span>,</span><br><span class="line">    <span class="attr">"typescript"</span>: <span class="string">"^4.3.5"</span>,</span><br><span class="line">    <span class="attr">"cross-env"</span>: <span class="string">"^7.0.3"</span>,</span><br><span class="line">    <span class="attr">"@types/node"</span>: <span class="string">"^16.7.12"</span>,</span><br><span class="line">    <span class="attr">"@types/react"</span>: <span class="string">"^17.0.18"</span>,</span><br><span class="line">    <span class="attr">"@types/react-dom"</span>: <span class="string">"^17.0.9"</span>,</span><br><span class="line">    <span class="attr">"@typescript-eslint/eslint-plugin"</span>: <span class="string">"^4.29.2"</span>,</span><br><span class="line">    <span class="attr">"@typescript-eslint/parser"</span>: <span class="string">"^4.29.2"</span>,</span><br><span class="line">    <span class="attr">"@types/react-router-dom"</span>: <span class="string">"^5.1.8"</span>,</span><br><span class="line">    <span class="attr">"redux-devtools-extension"</span>: <span class="string">"^2.13.9"</span>,</span><br><span class="line">    <span class="attr">"tailwindcss-classnames"</span>: <span class="string">"^2.2.3"</span>,</span><br><span class="line">    <span class="attr">"autoprefixer"</span>: <span class="string">"^10.3.3"</span>,</span><br><span class="line">    <span class="attr">"postcss"</span>: <span class="string">"^8.3.6"</span>,</span><br><span class="line">    <span class="attr">"prettier"</span>: <span class="string">"^2.3.2"</span>,</span><br><span class="line">    <span class="attr">"dotenv"</span>: <span class="string">"^10.0.0"</span>,</span><br><span class="line">    <span class="attr">"eslint"</span>: <span class="string">"^7.32.0"</span>,</span><br><span class="line">    <span class="attr">"eslint-config-airbnb"</span>: <span class="string">"^18.2.1"</span>,</span><br><span class="line">    <span class="attr">"eslint-config-prettier"</span>: <span class="string">"^8.3.0"</span>,</span><br><span class="line">    <span class="attr">"eslint-plugin-import"</span>: <span class="string">"^2.24.0"</span>,</span><br><span class="line">    <span class="attr">"eslint-plugin-jsx-a11y"</span>: <span class="string">"^6.4.1"</span>,</span><br><span class="line">    <span class="attr">"eslint-plugin-react"</span>: <span class="string">"^7.24.0"</span>,</span><br><span class="line">    <span class="attr">"eslint-plugin-prettier"</span>: <span class="string">"^3.4.0"</span>,</span><br><span class="line">    <span class="attr">"eslint-plugin-react-hooks"</span>: <span class="string">"^4.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多环境"><a href="#多环境" class="headerlink" title="多环境"></a>多环境</h2><p><img src="https://image.xiaomo.info/blog/image-20210907151025364.png" alt="image-20210907151025364"></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">NODE_ENV</span> = local</span><br><span class="line"><span class="attr">VITE_BUILD_ENV</span> = development</span><br><span class="line"><span class="attr">VITE_HOST</span> = portal.local.xiaomo.info</span><br><span class="line"><span class="attr">VITE_PORT</span> = <span class="number">10086</span></span><br><span class="line"><span class="attr">VITE_BASE_URL</span> = ./</span><br><span class="line"><span class="attr">VITE_OUTPUT_DIR</span> = dist</span><br><span class="line"><span class="attr">VITE_APP_BASE_API</span> = https://mock.local.xiaomo.info</span><br></pre></td></tr></table></figure>
+
+<h2 id="vite配置"><a href="#vite配置" class="headerlink" title="vite配置"></a>vite配置</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'vite'</span>;</span><br><span class="line"><span class="keyword">import</span> reactRefresh <span class="keyword">from</span> <span class="string">'@vitejs/plugin-react-refresh'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> path <span class="keyword">from</span> <span class="string">'path'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; existsSync &#125; <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dotenv 是一个零依赖的模块，它能将环境变量中的变量从 .env 文件加载到 process.env 中</span></span><br><span class="line"><span class="keyword">const</span> dotenv = <span class="built_in">require</span>(<span class="string">'dotenv'</span>);</span><br><span class="line">dotenv.config(&#123;</span><br><span class="line">   path: existsSync(<span class="string">'.env'</span>) ?</span><br><span class="line">      <span class="string">'.env'</span> : path.resolve(<span class="string">'envs'</span>, <span class="string">`.env.<span class="subst">$&#123;process.env.NODE_ENV&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineConfig(&#123;</span><br><span class="line">   plugins: [reactRefresh()],</span><br><span class="line">   resolve: &#123;</span><br><span class="line">      alias: &#123;</span><br><span class="line">         <span class="string">'@@'</span>: path.resolve(__dirname),</span><br><span class="line">         <span class="string">'@'</span>: path.resolve(__dirname, <span class="string">'src'</span>),</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   server: &#123;</span><br><span class="line">      cors: <span class="literal">true</span>,</span><br><span class="line">      port: process.env.VITE_PORT <span class="keyword">as</span> unknown <span class="keyword">as</span> <span class="built_in">number</span>,</span><br><span class="line">      hmr: &#123;</span><br><span class="line">         host: <span class="string">'localhost'</span>,</span><br><span class="line">         protocol: <span class="string">'ws'</span>,</span><br><span class="line">         port: process.env.VITE_PORT <span class="keyword">as</span> unknown <span class="keyword">as</span> <span class="built_in">number</span>,</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="状态管理-1"><a href="#状态管理-1" class="headerlink" title="状态管理"></a>状态管理</h2><p><img src="https://image.xiaomo.info/blog/image-20210907151509301.png" alt="image-20210907151509301"></p>
+<h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createAsyncThunk, createSlice &#125; <span class="keyword">from</span> <span class="string">'@reduxjs/toolkit'</span>;</span><br><span class="line"><span class="keyword">import</span> fileService <span class="keyword">from</span> <span class="string">'@/service/fileService'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; File &#125; <span class="keyword">from</span> <span class="string">'@/models/File'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getFiles = createAsyncThunk(</span><br><span class="line">    <span class="string">'files/getFiles'</span>,</span><br><span class="line">    <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> fileService.getFiles();</span><br><span class="line">        <span class="keyword">const</span> result = response.data;</span><br><span class="line">        <span class="keyword">return</span> result.data <span class="keyword">as</span> File[];</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> FileState &#123;</span><br><span class="line">    loading: <span class="built_in">boolean</span>,</span><br><span class="line">    files: File[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState: FileState = &#123;</span><br><span class="line">    loading: <span class="literal">false</span>,</span><br><span class="line">    files: []</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fileSlice = createSlice(&#123;</span><br><span class="line">    name: <span class="string">'files'</span>,</span><br><span class="line">    initialState: initialState,</span><br><span class="line">    reducers: &#123;&#125;,</span><br><span class="line">    extraReducers: <span class="function">(<span class="params">builder</span>) =&gt;</span> &#123;</span><br><span class="line">        builder.addCase(getFiles.fulfilled, <span class="function">(<span class="params">state: FileState, action</span>) =&gt;</span> &#123;</span><br><span class="line">            state.loading = <span class="literal">false</span>;</span><br><span class="line">            state.files = action.payload;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> fileSlice.reducer;</span><br></pre></td></tr></table></figure>
+
+<h4 id="store"><a href="#store" class="headerlink" title="store"></a>store</h4><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configureStore &#125; <span class="keyword">from</span> <span class="string">'@reduxjs/toolkit'</span>;</span><br><span class="line"><span class="keyword">import</span> fileReducer <span class="keyword">from</span> <span class="string">'@/redux/fileSlice'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = configureStore(&#123;</span><br><span class="line">    reducer: &#123;</span><br><span class="line">        files: fileReducer,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> RootState = ReturnType&lt;<span class="keyword">typeof</span> store.getState&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用store"><a href="#使用store" class="headerlink" title="使用store"></a>使用store</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">   &lt;React.StrictMode&gt;</span><br><span class="line">      &lt;BrowserRouter&gt;</span><br><span class="line">         &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">            &lt;App/&gt;</span><br><span class="line">         &lt;/Provider&gt;</span><br><span class="line">      &lt;/BrowserRouter&gt;</span><br><span class="line">   &lt;/React.StrictMode&gt;,</span><br><span class="line">   document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="fileService"><a href="#fileService" class="headerlink" title="fileService"></a>fileService</h4><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Response &#125; <span class="keyword">from</span> <span class="string">'redaxios'</span>;</span><br><span class="line"><span class="keyword">import</span> api <span class="keyword">from</span> <span class="string">'@/utils/api'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Result &#125; <span class="keyword">from</span> <span class="string">'@/models/Result'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> fileService &#123;</span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">async</span> getFiles(): <span class="built_in">Promise</span>&lt;Response&lt;Result&gt;&gt; &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">await</span> api.get(<span class="string">'/api/v1/files'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>UI中获取数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export const CtwFiles = (): JSX.Element =&gt; &#123;</span><br><span class="line">   const dispatch = useDispatch();</span><br><span class="line">   useEffect(() =&gt; &#123;</span><br><span class="line">      dispatch(getFiles());</span><br><span class="line">   &#125;, [dispatch]);</span><br><span class="line"></span><br><span class="line">   const state = useSelector((state: RootState) =&gt; &#123;</span><br><span class="line">      return state.files;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   return &lt;CContainer</span><br><span class="line">      loading=&#123;state.loading&#125;</span><br><span class="line">      classes=&#123;classnames(&apos;h-80&apos;)&#125;</span><br><span class="line">      component=&#123;&lt;FileList files=&#123;state.files&#125;/&gt;&#125;</span><br><span class="line">   /&gt;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>详细代码请查看工程 <a href="https://github.com/reactZone/vite-react-ts-template" target="_blank" rel="noopener">https://github.com/reactZone/vite-react-ts-template</a></p>
+<h2 id="国际化-1"><a href="#国际化-1" class="headerlink" title="国际化"></a>国际化</h2><h2 id="在assets-i18n下新建翻译文件"><a href="#在assets-i18n下新建翻译文件" class="headerlink" title="在assets/i18n下新建翻译文件"></a>在<code>assets/i18n</code>下新建翻译文件</h2><p><img src="https://image.xiaomo.info/blog/image-20210907152148011.png" alt="image-20210907152148011"></p>
+<p>ja-JP.json</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"home"</span>: <span class="string">"ホーム"</span>,</span><br><span class="line">  <span class="attr">"welcome"</span>: <span class="string">"ホームへようこそ！"</span>,</span><br><span class="line">  <span class="attr">"Login"</span>: <span class="string">"ログイン"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="国际化核心实现"><a href="#国际化核心实现" class="headerlink" title="国际化核心实现"></a>国际化核心实现</h4><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> LanguageDetector <span class="keyword">from</span> <span class="string">'i18next-browser-languagedetector'</span>;</span><br><span class="line"><span class="keyword">import</span> i18n <span class="keyword">from</span> <span class="string">'i18next'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; initReactI18next &#125; <span class="keyword">from</span> <span class="string">'react-i18next'</span>;</span><br><span class="line"><span class="keyword">import</span> enUsTrans <span class="keyword">from</span> <span class="string">'@/assets/i18n/en-us.json'</span>;</span><br><span class="line"><span class="keyword">import</span> zhCnTrans <span class="keyword">from</span> <span class="string">'@/assets/i18n/zh-cn.json'</span>;</span><br><span class="line"><span class="keyword">import</span> jaJpTrans <span class="keyword">from</span> <span class="string">'@/assets/i18n/ja-jp.json'</span>;</span><br><span class="line"></span><br><span class="line">i18n</span><br><span class="line">   .use(LanguageDetector) <span class="comment">// 嗅探当前浏览器语言</span></span><br><span class="line">   .use(initReactI18next) <span class="comment">// init i18next</span></span><br><span class="line">   .init(&#123;</span><br><span class="line">      <span class="comment">// 引入资源文件</span></span><br><span class="line">      resources: &#123;</span><br><span class="line">         en: &#123;</span><br><span class="line">            translation: enUsTrans,</span><br><span class="line">         &#125;,</span><br><span class="line">         zh: &#123;</span><br><span class="line">            translation: zhCnTrans,</span><br><span class="line">         &#125;,</span><br><span class="line">         ja: &#123;</span><br><span class="line">            translation: jaJpTrans,</span><br><span class="line">         &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 选择默认语言，选择内容为上述配置中的key，即en/zh/ja</span></span><br><span class="line">      fallbackLng: <span class="string">'ja'</span>,</span><br><span class="line">      debug: <span class="literal">false</span>,</span><br><span class="line">      interpolation: &#123;</span><br><span class="line">         escapeValue: <span class="literal">false</span>, <span class="comment">// not needed for react as it escapes by default</span></span><br><span class="line">      &#125;,</span><br><span class="line">   &#125;)</span><br><span class="line">   .then(<span class="function">(<span class="params">r</span>) =&gt;</span> <span class="built_in">console</span>.log(r));</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> i18n;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在入口文件加载i18n"><a href="#在入口文件加载i18n" class="headerlink" title="在入口文件加载i18n"></a>在入口文件加载i18n</h4><p><img src="https://image.xiaomo.info/blog/image-20210907152327173.png" alt="image-20210907152327173"></p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const Home = lazy(() =&gt; import(&apos;@/views/Home&apos;));</span><br><span class="line">const Task = lazy(() =&gt; import(&apos;@/views/Task&apos;));</span><br><span class="line">const Add = lazy(() =&gt; import(&apos;@/views/Add&apos;));</span><br><span class="line">const Login = lazy(() =&gt; import(&apos;@/views/Login&apos;));</span><br><span class="line"></span><br><span class="line">const App = (): JSX.Element =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">      &lt;Suspense fallback=&#123;&lt;CFullLoading/&gt;&#125;&gt;</span><br><span class="line">         &lt;Switch&gt;</span><br><span class="line">            &lt;Route path=&quot;/&quot; component=&#123;Home&#125; exact/&gt;</span><br><span class="line">            &lt;Route path=&quot;/home&quot; component=&#123;Home&#125;/&gt;</span><br><span class="line">            &lt;Route path=&quot;/task&quot; component=&#123;Task&#125;/&gt;</span><br><span class="line">            &lt;Route path=&quot;/add&quot; component=&#123;Add&#125;/&gt;</span><br><span class="line">            &lt;Route path=&quot;/login&quot; component=&#123;Login&#125;/&gt;</span><br><span class="line">            &lt;Route path=&quot;/404&quot; component=&#123;NotFound&#125;/&gt;</span><br><span class="line">            &lt;Redirect to=&quot;/404&quot;/&gt;</span><br><span class="line">         &lt;/Switch&gt;</span><br><span class="line">      &lt;/Suspense&gt;</span><br><span class="line">   );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p><a href="https://github.com/reactZone/vite-react-ts-template/generate" target="_blank" rel="noopener">https://github.com/reactZone/vite-react-ts-template/generate</a> 点击此链接创建属于自己的项目(需要事先登陆github账号)</p>
+<img src="https://image.xiaomo.info/blog/blogblogblogblogimage-20210907142954421.png" alt="image-20210907142954421" style="zoom: 50%;">
+
+<p>以此项目为模板创建一个新的项目，然后clone到本地进行开发</p>
+
+            
+        </div>
+        
+    </div>
+    
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2021/reactProject/">从0搭建一个react开发的脚手架</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">小莫</a></p>
+        <p><span>发布时间:</span>2021-09-07, 00:00:00</p>
+        <p><span>最后更新:</span>2022-08-10, 23:53:17</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/reactProject/" title="从0搭建一个react开发的脚手架">https://blog.xiaomo.info/2021/reactProject/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.xiaomo.info/2021/reactProject/　　作者: 小莫" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2021/mySummary2021/">
+                    2021年年终总结(又是跨界的一年)
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2021/japanNyuyin2/">
+                    日本医疗制度之限度額適用認定証
+                </a>
+            </div>
+        
+    </nav>
+
+    
+</article>
+
+
+
+<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<!--<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUkgluO"></script>-->
+
+<div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖库介绍"><span class="toc-number">1.</span> <span class="toc-text">依赖库介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#核心框架"><span class="toc-number">1.0.1.</span> <span class="toc-text">核心框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#国际化"><span class="toc-number">1.0.2.</span> <span class="toc-text">国际化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UI相关"><span class="toc-number">1.0.3.</span> <span class="toc-text">UI相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境相关"><span class="toc-number">1.0.4.</span> <span class="toc-text">环境相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-number">1.0.5.</span> <span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css框架"><span class="toc-number">1.0.6.</span> <span class="toc-text">css框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#eslint相关"><span class="toc-number">1.0.7.</span> <span class="toc-text">eslint相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络相关"><span class="toc-number">1.0.8.</span> <span class="toc-text">网络相关</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scripts"><span class="toc-number">2.</span> <span class="toc-text">scripts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整package-json"><span class="toc-number">3.</span> <span class="toc-text">完整package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多环境"><span class="toc-number">4.</span> <span class="toc-text">多环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vite配置"><span class="toc-number">5.</span> <span class="toc-text">vite配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态管理-1"><span class="toc-number">6.</span> <span class="toc-text">状态管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#slice"><span class="toc-number">6.0.1.</span> <span class="toc-text">slice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#store"><span class="toc-number">6.0.2.</span> <span class="toc-text">store</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用store"><span class="toc-number">6.0.3.</span> <span class="toc-text">使用store</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fileService"><span class="toc-number">6.0.4.</span> <span class="toc-text">fileService</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#国际化-1"><span class="toc-number">7.</span> <span class="toc-text">国际化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在assets-i18n下新建翻译文件"><span class="toc-number">8.</span> <span class="toc-text">在assets/i18n下新建翻译文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#国际化核心实现"><span class="toc-number">8.0.1.</span> <span class="toc-text">国际化核心实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在入口文件加载i18n"><span class="toc-number">8.0.2.</span> <span class="toc-text">在入口文件加载i18n</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-number">9.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用"><span class="toc-number">10.</span> <span class="toc-text">如何使用</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+<div class="share">
+    
+
+    
+</div>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<hr/>
+<br/>
+<div style="display:block;text-align: center">
+    <a href="javascript:window.open('https://twitter.com/share?url='+encodeURIComponent(document.location.href)+'&text='+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)"
+       style="background-color: lightskyblue;border-radius: 45px;box-shadow: #767676;font-size: 14px;font-family: '微软雅黑',serif;color: whitesmoke;padding: 10px 15px;"
+    >
+        twitter分享
+    </a>
+</div>
+<br/>
+<br/>
+<div id="gitalk-container" style="margin: 1% 3%"></div>
+<h3 style="text-align: center">如果想及时收到回复,可在 <a href="https://github.com/settings/notifications" target="_blank">订阅中心</a>的 <code>Participating</code>中勾选Email</h3>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '9772f6a6fdb199a60ba1',
+        clientSecret: '9a606af21688d2d4ff2efa2467ee82e76e1e9865',
+        id: window.location.pathname,
+        repo: 'blog',
+        owner: 'houko',
+        admin: 'houko',
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2021/mySummary2021/" title="上一篇: 2021年年终总结(又是跨界的一年)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2021/japanNyuyin2/" title="下一篇: 日本医疗制度之限度額適用認定証">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/mySummary2021/">2021年年终总结(又是跨界的一年)</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/reactProject/">从0搭建一个react开发的脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/japanNyuyin2/">日本医疗制度之限度額適用認定証</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/ohmytmux/">我的tmux之旅（tmux使用详解）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/doTween/">(转)doTween插件使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/mySecondFiveYearsLifePlan/">2020年年终总结和第二个长期学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/newmanCommandLine/">postman和commandline tools（newman）用法介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/npmPackageCollection/">npm优秀库使用收集整理(长期向)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/jsCommonUtilsMethods/">js/ts常用公有方法收集整理(长期向)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/springBootWithSpringSecurity/">spring cloud集成spring security</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/flyway/">使用flyway版本控制工具维护数据库表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/autoFormatOnSvae/">使用IDEA保存时自动格式化代码配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/vueSSRNuxt/">nuxt.js使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/webAppleSignIn/">web端接入apple Sign in流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/pm2UseApi/">node项目监控工具之pm2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/browserEventLoop/">聊聊Javascript的事件循环(转载)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/vueFrameworkVuex/">vue框架状态管理之vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/backToJapan/">疫情下的回日坎坷路</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/unityInterviewQuestions/">unity常见面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/my2019Summary/">2019年年终总结（作为前端开发这一年）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/worldServerGame/">经历了几场面试后的全球同服架构思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/japanKannjiIndex/">日语汉字速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/aboutAllVisa/">签证总结大全（工作签、在留卡加汉字、工作签证更新、家族签证等）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/javaPassByValueAndReference/">jdk源码系列-Java到底是值传递还是引用传递？</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/event20190729/">没想到有一天我逼停了电车</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/jdkSourceCodeReadThreadSleep/">jdk源码系列-Thread.sleep(0)和Thread.sleep(1)的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/restfulBestUse/">restful最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/nihonnmennkyo/">小莫的日本换驾照攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/nihonnkita2kagetsu/">2018年终总结（从杭州到日本工作的心路历程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unityFpsCommonMethod/">Fps游戏常用功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unitySceneFarAndNear/">镜头拉远拉近</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unity3dMiniMap/">unity3d小地图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/UGUISorting/">使用UGUI中的层级问题——以背包为例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/UGUIServerList/">使用UGUI制作滚动列表-选服列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/aboutDockerUse/">docker应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadArrayListAndLinkedArrayList/">jdk源码系列-Java中ArrayList、LinkedList和Vector的联系与区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadCreateObject/">jdk源码系列-创建对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadClassInitOrder/">jdk源码系列-类的初始化顺序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadStringDifferent/">jdk源码系列-String,StringBuffer,StringBuilder</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadAtomicInteger/">jdk源码系列-AtomicInteger</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadConcurrentHashMap/">jdk源码系列-ConcurrentHashMap</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadInteger/">jdk源码系列-Integer</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadThreadLocal/">jdk源码系列-ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadMemoryActor/">jdk源码系列-内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadIO/">jdk源码系列-深入了解IO的工作机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadThreadPool/">jdk源码系列-线程池</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadObject/">jdk源码系列-Object</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadNIO/">jdk源码系列-NIO</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/throwableAndException/">jdk源码系列-throwable和Exception的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeRead/">jdk源码系列-顺序索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/myBookSheet/">我的书架</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/mainProjectJobs/">主程职责总结和反思</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/onlineProjectKen/">项目上线之后遇到的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/fastjson/">fastjson的key为非字符串的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/saikennokoto/">2017年终总结(作为主程的这一年)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/AngularEnvironment/">angular2学习笔记之基础环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/HowToAskQuestionOnStackOverFlow/">StackOverFlow提问的艺术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/oracleJavaSeSliver/">java的oracle考试认证(OCJP)之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/blackAppleSystem/">安装黑苹果的历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JapanTravel/">日本游记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/GameServerType/">游戏服务器的常用架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JavaLombok/">lombok常用注解整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/SwiftProjectBuild/">swift项目初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/MySoftware/">我的常用软件清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/AboutObject/">关于对象的一些思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/MyKindle/">kindle初体验.</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/SomethingForNewCar/">我的新车常备用品</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/VimTabAutoComplete/">使用vim打开文件时tab补全忽略大小写设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/Win7OneNote/">win7系统登录不上onenote的解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/FormatDisk/">在linux系统下格式化移动硬盘的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/LinuxIdeaSetting/">linux系统环境下使用idea遇到的问题及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JavaApiJsonFormat/">接口格式返回大小写处理.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/StartMy2017/">2016年终总结(进入游戏行业)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MysqlCommon/">mysql常用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NormalShell/">常用shell脚本.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidUsersPermission/">Android users-permission权限列表.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidAsyncTask/">android异步任务AsyncTask.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidEnvironment/">android环境搭建.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/blogToXiaomo/">博客域名迁移(从二级域名迁移到一级域名).</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/SublimeConfig/">Sublime Text 3 使用配置与插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/HttpToHttps/">拥抱https(http全面切换到https)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootSwaggerUi/">swagger ui和spring boot集成生成api文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaLombok/">lombok简化java代码注解的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringVideo/">spring4免费全套视频教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonSeiyou/">日本动漫声优公演,来看看什么叫专业声优</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootDataFormat/">spring boot做前后分离时间格式化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootCors/">spring boot做前后分离的跨域问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringZiliao/">spring boot相关资料</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaIdeaMaven/">Maven 与 IntelliJ IDEA 的完美结合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaServletUpload/">使用Servlet做简单的上传功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonAnime/">喜欢的动漫</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonSekaku/">生活习惯的不同，造就了丰富多彩的世界</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/BangumiDongli/">《东离剑游记》</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NpmYargs/">yargs插件的使用，node.js 命令行框架 yargs 和你的程序实现交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2ApiRouter/">angular2 api整理之路由模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2ApiCommon/">angular2 api整理之通用模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptRxjsStudy/">rxjs全接触</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptDesignPattern/">javascript设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/2016StudyPlan/">5年学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2studyAnimate/">angular2学习笔记之动画效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyServiceHttp/">angular2学习笔记之服务和http</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteOther/">angular2学习笔记之小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteNgTag/">angular2学习笔记之ng2标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteEvent/">angular2学习笔记之事件和多组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteComponent/">angular2学习笔记之基本组件和ngFor</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/PublicDns/">几个国内专用的公共 DNS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxChmod/">linux权限详细解读</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxDisk/">阿里云服务器磁盘挂载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MarkdownTableStyle/">Markdown 表格样式调整与自适应优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/GulpUse/">gulp构建工具的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/FrontEndTools/">前端工程化工具初选</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AnkiExcelShortcuts/">Anki 记忆库之 Excel 快捷键大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/CssFontFamily/">CSS font-family 网页字体使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeSpider/">nodejs爬虫项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Package.jsonScripts/">package.json常用script</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NpmModulesShare/">npm模块分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MongodbUse/">mongodb数据库的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/KoaGenerator/">koa生成器,一键生成koa和koa2项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeKoa/">nodejs框架koa学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptSyntax/">javascript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Es6Syntax/">es6语法快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackLLink/">webpack进阶之loader篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackPlugins/">webpack进阶之插件篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackParams/">webpack相关命令参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeProcess/">nodejs的process模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackBasicUse/">webpack使用之基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeOnlineChat/">使用nodejs搭建一个简易的即时聊天软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxCrontab/">linux下使用定时器跑任务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AngularKeyboardEvent/">angularjs键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NgCheckbox/">angularjs复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MarkdownSyntax/">markdown语法</a></li></ul>
+
+<style>
+    #post-nav-button a{
+        background-color: skyblue;
+    }
+</style>
+
+
+
+<script>
+    
+</script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                
+                    2016-
+                
+                2022 小莫
+                <!--                <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备15009606号</a>-->
+            </div>
+            <div class="footer-right">
+                <a href="https://blog.xiaomo.info/" target="_blank" title="欢迎来到小莫的博客">Blog </a> Created by <a
+                        href="https://github.com/houko" target="_blank" rel="external nofollow"
+                        title="希望这里的文章对你有所帮助  v3.0">xiaomo</a>
+                <a href="/record.html"><i class="fa fa-heart animated infinite pulse"></i></a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit">总访问数:
+                            <span id="busuanzi_value_site_pv"></span>
+                        </span>
+                    </span>
+                
+                <span style="color: grey;">(<a href="https://www.upyun.com/" rel="external nofollow" target="_blank">背景随机加载-资源存储于又拍云</a>) | 本站己运行<span
+                            id="day_count">222</span>天<span id="time_now">1</span></span>
+            </div>
+        
+    </div>
+    <script src="/js/activate-power-mode.js" ></script>
+</footer>
+<script>
+    // 添加输入效果
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+
+    (function () {
+        function current() {
+            var d = new Date(), str = '';
+            str += d.getHours() + '小时';
+            str += d.getMinutes() + '分';
+            str += d.getSeconds() + '秒';
+            return str;
+        }
+
+        setInterval(function () {
+            $("#time_now").html(current)
+        }, 1000);
+
+        var dateFrom = new Date(2015, 9, 12);
+        var dateTo = new Date();
+        var diff = dateTo.valueOf() - dateFrom.valueOf();
+        var diff_day = parseInt(diff / (1000 * 60 * 60 * 24));
+        $("#day_count").html(diff_day);
+    })();
+</script>
+<a href="https://github.com/houko/blog"><img style="position: fixed; top: 0;left: 0;" width="140" height="140" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="https://image.xiaomo.info/blog/assets/js/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 36;
+                var randomIndex = Math.ceil(Math.random() * backgroundnum);
+                var result = randomIndex+".jpg?version="+(new Date()/1000);
+                var backgroundimg = "url(https://image.xiaomo.info/background/bg-number)".replace(/number/gi,result);
+//                console.info("加载图片"+backgroundimg);
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover","background-color":"rgba(255,255,255,0.5)","background-blend-mode":"lighten"});
+            }
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-80824007-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="https://image.xiaomo.info/blog/assets/js/mathjax.core.min.js">
+<!--<script src="https://image.xiaomo.info/blog/assets/js/mathjax.core.min.js?config=TeX-AMS-MML_HTMLorMML">-->
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1660175627924')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

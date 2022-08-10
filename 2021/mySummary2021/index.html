@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.9.0"><link rel="manifest" href="/manifest.json">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="小莫">
+<meta name="baidu-site-verification" content="qp2dTXVqvj">
+<link href="https://image.xiaomo.info/blog/assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<meta name="keywords" content="小莫的博客, java, 日语, 动漫, 技术, unity3d, nginx, https, angular, 游戏, 服务器, tomcat, IDEA, javaweb, spring, hibernate, spring boot, 开源中国, github, linux, 主程">
+
+
+<meta name="description" content="不管愿不愿意，2022年还是如期而至。对于我来说今年是个特殊的一年，从之前的奔三到了实实在在的到了30岁，心态还是有很多变化的。年底工作上非常的忙，导致2022年都过了半个月还没有把总结写法，迟到了一个月的年终总结终于出炉了,不过截至到今天完全写完正好是农历除夕，也不算迟到吧。">
+<meta name="keywords" content="summary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年年终总结(又是跨界的一年)">
+<meta property="og:url" content="https://blog.xiaomo.info/2021/mySummary2021/index.html">
+<meta property="og:site_name" content="小莫的博客-fighting(技术分享、生活随笔)">
+<meta property="og:description" content="不管愿不愿意，2022年还是如期而至。对于我来说今年是个特殊的一年，从之前的奔三到了实实在在的到了30岁，心态还是有很多变化的。年底工作上非常的忙，导致2022年都过了半个月还没有把总结写法，迟到了一个月的年终总结终于出炉了,不过截至到今天完全写完正好是农历除夕，也不算迟到吧。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-092009.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-091942.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-091908.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-084948.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-092536.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-084915.png">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gyvryraxfsj31wq0su0xo.jpg">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-090734.jpg">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-092946.jpg">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-094220.jpg">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-094748.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-095449.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-100236.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-103001.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-103243.png">
+<meta property="og:image" content="https://image.xiaomo.info/blog/2022-01-30-130237.jpg">
+<meta property="og:updated_time" content="2022-08-10T23:53:17.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2021年年终总结(又是跨界的一年)">
+<meta name="twitter:description" content="不管愿不愿意，2022年还是如期而至。对于我来说今年是个特殊的一年，从之前的奔三到了实实在在的到了30岁，心态还是有很多变化的。年底工作上非常的忙，导致2022年都过了半个月还没有把总结写法，迟到了一个月的年终总结终于出炉了,不过截至到今天完全写完正好是农历除夕，也不算迟到吧。">
+<meta name="twitter:image" content="https://image.xiaomo.info/blog/2022-01-30-092009.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternative" href="/atom.xml" title="小莫的博客-fighting(技术分享、生活随笔)" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="//image.xiaomo.info/logo/avatar.png">
+
+
+
+    <link href="https://image.xiaomo.info/blog/assets/css/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="https://image.xiaomo.info/blog/assets/css/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="https://image.xiaomo.info/blog/assets/js/pace.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="https://image.xiaomo.info/blog/assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>2021年年终总结(又是跨界的一年) | 小莫的博客-fighting(技术分享、生活随笔)</title>
+
+<script src="https://image.xiaomo.info/blog/assets/js/jquery.min.js"></script>
+<script src="https://image.xiaomo.info/blog/assets/js/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false,
+        fancybox_js: "https://image.xiaomo.info/blog/assets/js/jquery.fancybox.min.js",
+        scrollreveal: "https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "https://image.xiaomo.info/blog/assets/js/jquery-ui.min.js", "https://image.xiaomo.info/blog/assets/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+</html>
+<body oncontextmenu="return false" onselectstart="return false">
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="https://blog.xiaomo.info" target="_self" class="profilepic">
+            <img src="//image.xiaomo.info/logo/avatar.png" alt="logo" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">小莫</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">行百里者半九十</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="//xiaomo.info">回到主站</a></li>
+                        
+                            <li><a href="/tags/japan/">日本生活系列</a></li>
+                        
+                            <li><a href="/tags/summary/">年度总结系列</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/about.html">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="mailto:xiaomo@xiaomo.info" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=83387856&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/xiaomoinfo" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="external nofollow" href="https://www.zhihu.com/people/xiaomoinfo" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK源码系列/">JDK源码系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OCJP/">OCJP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alime/">alime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doTween/">doTween</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es5/">es5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/japan/">japan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lombok/">lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nuxt/">nuxt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onenote/">onenote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postman/">postman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rxjs/">rxjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stackoverflow/">stackoverflow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swagger/">swagger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology/">technology</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ugui/">ugui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/习惯/">习惯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动漫/">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字体/">字体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/容器/">容器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅游/">旅游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码系列/">源码系列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">技术宅、 杭州、 夜猫子、 爱动漫、 爱日语 2015年毕业、 java开发、 web前端、 前沿技术发烧友、 生命不息折腾不止、</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">小莫</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="//image.xiaomo.info/logo/avatar.png" alt="logo" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">小莫</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">行百里者半九十</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="//xiaomo.info">回到主站</a></li>
+                
+                    <li><a href="/tags/japan/">日本生活系列</a></li>
+                
+                    <li><a href="/tags/summary/">年度总结系列</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/about.html">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" rel="external nofollow" href="mailto:xiaomo@xiaomo.info" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="external nofollow" href="http://wpa.qq.com/msgrd?v=3&uin=83387856&site=qq&menu=yes" title="QQ"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="external nofollow" href="https://twitter.com/xiaomoinfo" title="Twitter"></a>
+                            
+                                <a class="fa StackOverflow" target="_blank" rel="external nofollow" href="http://stackoverflow.com/users/5804125/hpbest" title="StackOverflow"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="external nofollow" href="https://www.zhihu.com/people/xiaomoinfo" title="知乎"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><style>
+    .background-cover {
+        float: left;
+        width: 400px;
+        height: 250px;
+    }
+
+    .article img {
+        margin: -1px 20px 5px -1px;
+        border-top-left-radius: 3px;
+        -webkit-border-radius-topleft: 3%;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    /*.article img:hover{*/
+    /*transform: scale(1, 1.05);*/
+    /*-webkit-transition:all 0.5s;*/
+    /*-moz-transition:all 0.5s;*/
+    /*-o-transition:all 0.5s;*/
+    /*}*/
+</style>
+
+
+<article id="post-mySummary2021" class="article article-type-post" itemscope itemprop="blogPost">
+    <script>
+        function getPgjs() {
+            const agent = navigator.userAgent.toLowerCase()
+            let res = agent.match(/android/)
+            if (res === "android")
+                return res;
+            res = agent.match(/iphone/);
+            if (res === "iphone")
+                return "ios";
+            res = agent.match(/ipad/);
+            if (res === "ipad")
+                return "ios";
+            res = agent.match(/windows/);
+            if (res === "windows")
+                return "wp";
+            console.info('pc......')
+            return "pc";
+        }
+
+        function loadImage(id) {
+            const page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                return;
+            }
+            var backgroundnum = 40;
+            var randomIndex = Math.ceil(Math.random() * backgroundnum);
+            var result = randomIndex + "?version=" + (new Date() / 1000);
+            var backgroundimg = "https://image.xiaomo.info/cover/bg-number.jpg".replace(/number/gi, randomIndex);
+            var key = "#" + id;
+            $(key).attr("src", backgroundimg);
+            $(".background-cover").show();
+        }
+
+        (function () {
+            const page = window.location.pathname
+            if (page.indexOf("about") !== -1) {
+                console.log(page)
+                $(".background-cover").hide();
+            }
+        })()
+    </script>
+    
+    <div class="article-meta">
+        <a href="/2021/mySummary2021/" class="article-date">
+      <time datetime="2021-12-31T00:00:00.000Z" itemprop="datePublished">2021-12-31</time>
+</a>
+    </div>
+    
+    <div class="article-inner">
+        
+        <input type="hidden" class="isFancy"/>
+        
+        <div class="background-cover">
+            <img class="fengmian-image" id="mySummary2021" src="https://image.xiaomo.info/cover/bg-5.jpg" alt="封面" onload="loadImage(this.id)"/>
+        </div>
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      2021年年终总结(又是跨界的一年)
+    </h1>
+  
+
+        </header>
+        
+        <div class="article-info article-info-post">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Japan/">Japan</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul> </div>
+
+
+
+            <!-- 访问量  -->
+            <!--<span id="busuanzi_container_page_pv" style='display:none'>-->
+            <!--<span id="page-visit"><i class="fa fa-eye" style="float: left;margin-top:5px" aria-hidden="true" title="文章访问量"></i>-->
+            <!--<span id="busuanzi_value_page_pv"></span>-->
+            <!--</span>-->
+            <!--</span>-->
+
+            <div class="clearfix"></div>
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+            
+            <p>不管愿不愿意，2022年还是如期而至。对于我来说今年是个特殊的一年，从之前的奔三到了实实在在的到了30岁，心态还是有很多变化的。年底工作上非常的忙，导致2022年都过了半个月还没有把总结写法，迟到了一个月的年终总结终于出炉了,不过截至到今天完全写完正好是农历除夕，也不算迟到吧。</p>
+<a id="more"></a>
+<h4 id="建议直接看视频高清版"><a href="#建议直接看视频高清版" class="headerlink" title="建议直接看视频高清版"></a>建议直接看视频<a href="https://www.bilibili.com/video/BV1Sm4y1o7aZ" target="_blank" rel="noopener">高清版</a></h4><iframe src="//player.bilibili.com/player.html?aid=678786061&bvid=BV1Sm4y1o7aZ&cid=501656401&page=1" scrolling="no" height="768" width="1024" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><h3 id="参与的项目"><a href="#参与的项目" class="headerlink" title="参与的项目"></a>参与的项目</h3><h4 id="游戏平台管理系统"><a href="#游戏平台管理系统" class="headerlink" title="游戏平台管理系统"></a>游戏平台管理系统</h4><ul>
+<li>后端<code>java</code>，前端<code>vue2</code></li>
+<li>系统新功能的开发和维护</li>
+<li>新游戏上线流程的优化</li>
+<li>即存Bug的修改和UI/UX的优化</li>
+<li>支付授权、支付回调、支付方式、订单等功能的开发</li>
+<li>添加google sso登陆方式<br><img src="https://image.xiaomo.info/blog/2022-01-30-092009.png" alt="image-20220130182004894"></li>
+</ul>
+<h4 id="游戏平台"><a href="#游戏平台" class="headerlink" title="游戏平台"></a>游戏平台</h4><ul>
+<li>前端<code>React</code>，后端<code>java</code></li>
+<li>功能的开发</li>
+<li>线上bug的修复<br><img src="https://image.xiaomo.info/blog/2022-01-30-091942.png" alt="image-20220130181941842"><br><br><br></li>
+</ul>
+<h3 id="管理相关"><a href="#管理相关" class="headerlink" title="管理相关"></a>管理相关</h3><ul>
+<li>面试</li>
+<li>Intern发表评价</li>
+<li>Project Tracking</li>
+<li><a href="https://www.bilibili.com/video/BV1vy4y1x7xd/" target="_blank" rel="noopener">技术分享：游戏开发浅析:科普向</a><iframe src="//player.bilibili.com/player.html?aid=802515835&bvid=BV1vy4y1x7xd&cid=321456692&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="768" width="1024"> </iframe>
+<br><br>
+
+
+</li>
+</ul>
+<h3 id="PIC的项目"><a href="#PIC的项目" class="headerlink" title="PIC的项目"></a>PIC的项目</h3><h4 id="把公司官网从ctw-inc-net迁移到ctw-inc上"><a href="#把公司官网从ctw-inc-net迁移到ctw-inc上" class="headerlink" title="把公司官网从ctw-inc.net迁移到ctw.inc上"></a>把公司官网从<a href="https://ctw-inc.net/" target="_blank" rel="noopener">ctw-inc.net</a>迁移到<a href="https://ctw.inc/" target="_blank" rel="noopener">ctw.inc</a>上</h4><ul>
+<li>技术栈是 <code>wordpress</code>，服务放在了<code>AWS</code>上</li>
+<li>整个网站打包迁移到新的域名</li>
+<li>配置了<code>Google Analytics</code>和<code>Google SSO</code>登陆</li>
+<li>配套的一些<code>SEO优化设置</code></li>
+<li>维护着官网上的一些内容更新<br><img src="https://image.xiaomo.info/blog/2022-01-30-091908.png" alt="image-20220130181907797"><br><br><br></li>
+</ul>
+<h4 id="根据开源博客hexo二次开发了公司技术部的博客网站"><a href="#根据开源博客hexo二次开发了公司技术部的博客网站" class="headerlink" title="根据开源博客hexo二次开发了公司技术部的博客网站"></a>根据开源博客hexo二次开发了公司技术部的博客网站</h4><ul>
+<li>从0搭建了一个技术博客</li>
+<li>根据UI设计对博客主题进行二次开发</li>
+<li>维护博客的一些内容更新<br><img src="https://image.xiaomo.info/blog/2022-01-30-084948.png" alt="image-20220130174948507"><br><br><br></li>
+</ul>
+<h4 id="上线了短连接服务"><a href="#上线了短连接服务" class="headerlink" title="上线了短连接服务"></a>上线了短连接服务</h4><ul>
+<li>后端API用go语言开发，管理界面用vue开发，项目打docker镜像放在k8s集群上</li>
+<li>主要功能就是在host后成生成一个随机串，比如 <a href="https://domain/mblghox8%EF%BC%8C%E8%AE%BF%E9%97%AE%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%E5%8F%AF%E4%BB%A5%E8%B7%B3%E5%88%B0%E5%B8%A6%E6%9C%89%E5%BE%88%E5%A4%9A%E5%8F%82%E6%95%B0%E7%9A%84%E5%8E%9F%E5%A7%8B%E9%93%BE%E6%8E%A5" target="_blank" rel="noopener">https://domain/mblghox8，访问这个地址可以跳到带有很多参数的原始链接</a></li>
+<li>在平台管理工具上添加了对短连接的管理UI<br><br><br></li>
+</ul>
+<h4 id="开发了平台三周年庆典的活动网站"><a href="#开发了平台三周年庆典的活动网站" class="headerlink" title="开发了平台三周年庆典的活动网站"></a>开发了平台三周年庆典的活动网站</h4><ul>
+<li>前端<code>React</code>，后端<code>java</code>，数据库<code>mysql</code></li>
+<li>API接口管理</li>
+<li>接入<code>Twitter API</code>拉取最新的数量<br><br><br></li>
+</ul>
+<h4 id="搭建前端React-vite-react-tailwind-mui-和后端Golang-go-gin-gorm-模板"><a href="#搭建前端React-vite-react-tailwind-mui-和后端Golang-go-gin-gorm-模板" class="headerlink" title="搭建前端React(vite+react+tailwind+mui)和后端Golang(go+gin+gorm)模板"></a>搭建前端React(vite+react+tailwind+mui)和后端Golang(go+gin+gorm)模板</h4><ul>
+<li>公司项目越来越多，技术负债也越来越重。为了统一技术栈，搭建了前后端开发的模板，方便新起项目的时候快速搭建</li>
+<li>golang项目模板搭建的时候参考了<code>springboot</code>开发的结构，现在实际项目中己经修改和原来结构完全不同的结构<br><img src="https://image.xiaomo.info/blog/2022-01-30-092536.png" alt="image-20220130182536394"><br><br><br></li>
+</ul>
+<h4 id="翻译平台"><a href="#翻译平台" class="headerlink" title="翻译平台"></a>翻译平台</h4><ul>
+<li>前端<code>React</code>，后端<code>Golang</code>，其他技术栈：<code>mysql</code>+<code>redis</code>+<code>elasticsearch</code>+<code>kafka</code></li>
+<li>因为平台开始做全球化，需要把游戏翻译成各个国家的语言版本，原来的三方工具<a href="https://crowdin.com/" target="_blank" rel="noopener">crowdin</a>无法满足需求，所以自己写了一个翻译平台</li>
+<li>前后端分离，项目放在了<code>k8s</code>上<br><img src="https://image.xiaomo.info/blog/2022-01-30-084915.png" alt="image-20220130174755461"><br>
+
+
+</li>
+</ul>
+<h3 id="工作上的变动"><a href="#工作上的变动" class="headerlink" title="工作上的变动"></a>工作上的变动</h3><p>一开始参加工作的时候一直做的后端开发，有的时候有一些好的想法想做一个小项目出来，但是因为只会后端所以把API都写出来了却没有前端页面，导致想法也不了了之。后来为了解决这个困扰开始学习前端，把主流的<code>Angular</code>、<code>React</code>、<code>Vue</code>都玩了一遍，2019年从国内游戏公司离职到日本做前端写<code>angular</code>算是真正的开始在商业项目中参与前端的工作。2020年还是回到了心心念念的游戏行业，不过开始是<code>fullstack</code>的角色参与开发。主要使用<code>java</code>和<code>vue</code>，在年底的时候开始陆续在一些微服务上用<code>golang</code>写API，在基础设施搭建方面和同事接触了解了一些<code>aws</code>、<code>terraform</code>、<code>k8s</code>的知识，开始产生兴趣不断的学习。于是在年底的时候从<code>App</code>开发组转到了<code>Cloud</code>组做系统架构，期间也在用<code>golang</code>写翻译平台的API，用React写一些前端项目。<br><br><br></p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><h3 id="前端方面"><a href="#前端方面" class="headerlink" title="前端方面"></a>前端方面</h3><ul>
+<li>彻底放弃<code>Vue</code>系列，开始全身心关注React技术栈相关内容，因为精力实在有限(Vue非常简单，如果以后工作有需要稍微看下最新文档就可以写业务)，把之前用<code>React Class Component</code>全部换到了<code>React Hook</code>的写法</li>
+<li>学习了<code>MUI</code>的使用，虽然它只是一个UI框架但是对于CSS的写法和原生React写css样式有着巨大的差异</li>
+<li>在项目中使用<code>Tailwindcss</code>来写css，不断的在和同事讨论最佳实践，引用了<code>tailwindcss-classnames</code>来对<code>class</code>进行检查</li>
+<li>构建工具从<code>webpack</code>换到了<code>vite</code>，后端<code>esbuild</code>前端<code>vite</code>来打包项目。但是因为要多环境部署使用<code>runtimeConfig</code>来打包项目变量</li>
+<li>TS的用法在前端和后端Node项目中得到了大量的练习，对于基本使用己没有太大问题。</li>
+</ul>
+<p><br><br></p>
+<h3 id="后端方面"><a href="#后端方面" class="headerlink" title="后端方面"></a>后端方面</h3><ul>
+<li>用Node（<code>Koa2</code> + <code>sequlize</code>）写了一个订单相关的项目，感觉只是在API层面上使用的话边写边查文档不用很熟写功能也问题不大。但是和熟练者相比效率会低，而且有些坑不知道会有些问题。</li>
+<li>从开始排斥用<code>Golang</code>写新项目到积极的拥抱<code>Golang</code>，感受到用新东西需要有一个接受过程而且如果有可以一起交流的小伙伴会更加有动力坚持下去。</li>
+<li>写了7年的Java，照目前的计划的话以后写Java的机会会非常少，不过一点也没有觉得可惜。技术在不断的更新，人也得往前走，一直待在舒适区是一件很恐怖的事情。</li>
+</ul>
+<p><br><br></p>
+<h3 id="Infra方面"><a href="#Infra方面" class="headerlink" title="Infra方面"></a>Infra方面</h3><ul>
+<li>2015年开始使用阿里云在上面买服务器折腾一些内容，直到今年10月份接触到AWS才了解到AWS的强大，因此组建了一个AWS学习小组一起学习AWS并把内容直播放在<a href="https://www.youtube.com/playlist?list=PL5W70sCpELWAtXDglmoEAfLhnEVWOxfwX" target="_blank" rel="noopener">Youtube</a> 和 <a href="https://www.bilibili.com/video/BV1nb4y1q7r3/" target="_blank" rel="noopener">bilibili</a> 上，有兴趣的朋友可以看看我们在学习过程中如何成长，有没有踩过你踩到的坑。</li>
+<li>IaC是近些年非常流行的一个思想，使用写代码的方式代替在网页上点点点的操作好处显而易见。比如代码的复用性，可维护性等等都是很大的优势，因此学习了Terraform如何管理我的AWS资源并以考取terraform证书为目标。当然IaC工具不光这一个，比如AWS的服务<code>CloudFormation</code>和用不同的编程语言都可以管理你的资源的<a href="https://www.pulumi.com/" target="_blank" rel="noopener">pulumi</a>，根据自己的需要进行学习。目前考到了Terraform的证书，HashCrop家还有2个证书后续有时间也想一起考了。<br><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyvryraxfsj31wq0su0xo.jpg" alt="image-20220130172402266"></li>
+<li>前几年使用Docker也仅限于用Docker起一个本地测试的数据库之类的，今年系统的学习了Docker相关的知识，包括基础用法、DockerFile、Compose、网络、原理等，计划春节期间花一周的时间来开一个Docker专题当一下Docker的布道师，也巩固一下自己的Docker知识。(Podman用法基本一致，后面学下原理感觉问题不大)</li>
+<li>使用Docker来打包项目好处很多，但是如果Docker镜像一旦多起来了如何编排呢？手工维护是一件非常头疼的事情，因此开始学习k8s如何使用，以考取<code>CKA</code>+<code>CKS</code>为目标来学习k8s</li>
+<li>其他的一些监控系统的搭建，比如日志收集系统<code>ELK</code>，k8s资源监控<code>grafana</code>，项目部署系统<code>ArgoCD</code>等等</li>
+</ul>
+<h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><h4 id="日语方面"><a href="#日语方面" class="headerlink" title="日语方面"></a>日语方面</h4><p>2021年12月份的N1依旧没有通过考试，最初目标是为了想拿永驻的签证可以加分所以卯着劲想要考过，但是结果证明我的日语还只是刚刚达到N2的水平，甚至N2的语法大部分都没有掌握，勉强去考N1意义不大，因此后续计划把N2的课程系统的从头再学一遍。等基础打牢了之后再继续以N1为目标吧，经历了这几次考试我深刻的体会到结果不会欺骗你，你在它上面付出了多少心血，它就会拿同等的结果来回报你，想要顺利通过就一定得付出努力才行。</p>
+<p><img src="https://image.xiaomo.info/blog/2022-01-30-090734.jpg" alt="3.pic"></p>
+<h4 id="英语方面"><a href="#英语方面" class="headerlink" title="英语方面"></a>英语方面</h4><p>在这次的Terraform的备考和考试的经历来说，不会英语会成为技术进步的一大阻碍。本来是想着工作中需要大量的读到英语的文档，坚持看英语很快就能提高。但是理想很美好现实不如意，平时在公司工作比较忙想静下心来细读英文文档的次数非常少，为了更快的理解经常读到一半的时候直接翻译成中文快速的过一遍然后就去写代码了。个人觉得还有一个非常重要的原因是对英语的恐惧感，目前我读日语的文章己经没有之前的那种恐惧感了，但是英语还是会有这种感觉。不是说我的英语水平理解不了文章的内容，而是看着看着突然有个不认识的词卡住再去查觉得挺难受，而且看技术文档本来就比较耗费精力，再分一部分脑细胞给理解英语上就很抵触。这是我目前最大的问题，为了克服这种障碍我计划开始从简单的非技术文章开始看起，养成看英语文章的习惯而不是打开一个网页是英文的条件反射的就给翻译成中文。以托业750+为目标来好好学习英语。<br><img src="https://image.xiaomo.info/blog/2022-01-30-092946.jpg" alt="1371643534969_.pic"></p>
+<h2 id="兴趣"><a href="#兴趣" class="headerlink" title="兴趣"></a>兴趣</h2><h4 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h4><p>2015年进入游戏行业后对游戏的原理和套路了解的透彻之后对游戏反而没有那么大的兴趣了。还有一种可能应该是年龄越来越大能力却配不上这个年纪的时候心里对玩游戏也没有了那么大的兴致。但是作为一个玩游戏长大的人来说，生活中如果没有了游戏生活的乐趣一定会少很多。当初一起玩网游(WOW、剑灵、DNF、LOL、PUBG)的朋友和同事一个一个的从身上消失，我也就没有了继续玩下去的动力。尝试着玩一玩别的类型的游戏，于是买了Switch OLED和一些游戏卡，尽量让自己的生活不那么无趣。</p>
+<p><img src="https://image.xiaomo.info/blog/2022-01-30-094220.jpg" alt="1381643535723_.pic"></p>
+<h4 id="钢琴"><a href="#钢琴" class="headerlink" title="钢琴"></a>钢琴</h4><p>学习钢琴是我这十几年来一直想要付诸实践的事情，但是受限于各种原因一直没有机会，趁着过年的机会买了一台kawari es110。虽然可能短期并没有机会让自己能够比较熟练的学会如何弹奏，但是也算是满足了这么多年的一个想要学习的愿望吧。<br><img src="https://image.xiaomo.info/blog/2022-01-30-094748.png" alt="image-20220130184747945"></p>
+<h4 id="滑雪"><a href="#滑雪" class="headerlink" title="滑雪"></a>滑雪</h4><p>在很偶然的机会下，同事邀请着一起去滑雪。在杭州的时候曾经有一次去滑雪玩过一次双板，但是具体什么感觉己经完全记不住了。本来并不打算去，但是后来想要挑战一下自我，是一个难得的机会于是和同事一起去了越后汤泽的滑雪场。己经数不清摔了有多少次，但是作为真正的第一次滑雪体验，成长速度还算是比较满意。后续元旦和三连休的时候又连续去了两次，目前己经算是我众多爱好里在不断追求进步的爱好之一了。毕竟花了那么多钱置办装备，如果不坚持下去怎么对得起自己的钱包，希望今年冬天我能够飘逸的滑完全程不摔跤。</p>
+<img src="https://image.xiaomo.info/blog/2022-01-30-095449.png" alt="image-20220130185449574" style="zoom:50%;">
+
+<iframe src="//player.bilibili.com/player.html?aid=465546934&bvid=BV1EL41157Ua&cid=482457665&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="768" width="1024"> </iframe>
+
+<h4 id="动漫"><a href="#动漫" class="headerlink" title="动漫"></a>动漫</h4><p>小时候虽然看过各种动漫，但是电视上的动漫都汉化成了中文，体会不到看原版动漫那种感觉。应该来说真正爱上看动漫是在上大学的时候，追着当时的热门番一直就这么追了十几年，这应该是我有生之年坚持的最久且热情不减的爱好了。如果看到这里的你还怎么看过动漫，一定建议去看一看，它远比各种偶像剧、综艺那些带给我们的感触要多的多。我在Notion上维护着一个动漫列表，收集着这些年来非常推荐的一些动漫，有兴趣的可以<a href="https://xiaomoinfo.notion.site/f3cd200d379740efbd381f57e0714d5d?v=8541fff72dff464e8564acb26ef46a83" target="_blank" rel="noopener">打开看一看</a>。</p>
+<p><img src="https://image.xiaomo.info/blog/2022-01-30-100236.png" alt="image-20220130190235938"></p>
+<h4 id="旅游"><a href="#旅游" class="headerlink" title="旅游"></a>旅游</h4><p>我的梦想就是环游世界，做着自由的工作。背着电脑在不同的国家边体会各国的风情边工作，但是近两年持续没有好转别说去别的国家旅游，连回国都变的不可能。但好的一点是很多公司己经开始接受永久远程办公了，这也算是间接的离梦想更近了一步吧。有认识的朋友在公司允许永久远程工作之后很快就从东京搬到了福冈，不必在拥挤的东京和大家抢资源是一件非常值得开心的事情。后面等疫情过去之后至少一年去一个国家旅游，领略一下不同的风景。</p>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><h4 id="记忆力"><a href="#记忆力" class="headerlink" title="记忆力"></a>记忆力</h4><p>发现自己近两年记忆力越来越差，不仅表现在学习记东西没有之前有效率，而且很多事情头天决定的事情第二天就完全没有印象了，因此我做了一些应对方案。</p>
+<h5 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h5><p>我从笔记从原来的onenote迁移到了Notion，从一个youtuber(老石谈芯)那里了解到第二大脑的概念，把人不擅长长久保存在大脑的东西转到笔记里，在大脑里只有一个索引，把自己的大脑用来做思考、分析、做决策、学东西而不是记忆。</p>
+<img src="https://image.xiaomo.info/blog/2022-01-30-103001.png" alt="image-20220130193001167" style="zoom:50%;">
+
+<h5 id="todo-list"><a href="#todo-list" class="headerlink" title="todo list"></a>todo list</h5><p>想到有什么事情需要做的时候第一件事情就是先掏出手机把记下来，然后把时间、地点、要做的事情给记下来。到点之前手机会自动给我推送消息提醒我，而不是完全靠自己的大脑去记。</p>
+<img src="https://image.xiaomo.info/blog/2022-01-30-103243.png" alt="image-20220130193243018" style="zoom:50%;">
+
+
+
+<p>开始记账</p>
+<p>不管是在上学的时候还是开始工作之后，对于每个月要用多少钱是一点规划都没有的。想买什么一冲动就买了，月底的时候一看账单一大堆，总怀疑哪里有错，为什么会花这么多。曾经有短暂的记账，但是没坚持多久就放弃了。2021年一整年坚持下来，己经养成了记账的好习惯。个人认为记账的目的不是为了省钱，而是当看到账单时经过自己手的每一笔账，哪些是真正的对生活的提高起到了作用，哪些是冲动消费，买了从来基本上不用的东西，考虑一下以后是不是可以把把这些东西的钱用在别的地方能够让自己的生活过的更舒服。</p>
+<h5 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h5><p>从出生到现在，我们每个人都对学习这件事情上从没有停止过，甚至学习着如何学习，学习是推动我们生活的动力。提升自我能够得到更多的报酬，可以让自己的生活变好，生活变好之后就更有动力去学习继续提升自我。如果每天只是重复的、机械性的工作，下班了就刷短视频、葛优躺追剧，那么年复一年除了年龄增长、身体越来越差之外基本上得不到别的收获。我之前几年学技术一直是自己埋头苦学，今年偶然间认识了一些网络上的朋友，每天早上一起学习Terrafrom（己经拿到证书），然后也发起组建了AWS学习会晚上在zoom上一直学习。感觉这种方式非常的不错，毕竟程序员的圈子特别小平时工作和别人沟通也不多，能够通过这种方式认识一些朋友感觉是一件非常值得高兴的事情。而且大家住在不同的国家，接触着不同的东西，能够互相学习，互相鼓励，打算把这种模式一直持续下去。</p>
+<h5 id="当UP主"><a href="#当UP主" class="headerlink" title="当UP主"></a>当UP主</h5><p>这几年在学习的过程中把自己需要学习的视频搬运到B站上己经积攒了近2万的关注，但是没有太大成就感 。于是开始自己录制一些视频，目前开了三个系列，后面还打算有一个<code>莫读书系列</code>，分享看过的一些比较好的书。</p>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1nb4y1q7r3/" target="_blank" rel="noopener">莫学习</a>：AWS学习小组直播录屏</li>
+<li><a href="https://www.bilibili.com/video/BV1fS4y1D77f/" target="_blank" rel="noopener">莫分享</a>：分享一些工作生活中接触到的觉得非常好的东西</li>
+<li><a href="https://www.bilibili.com/video/BV15g411A7qJ/" target="_blank" rel="noopener">莫生活</a>：在家写代码、整理笔记或者一些碎碎念，记录日常生活的一些内容</li>
+</ol>
+<p>录这些视频让我认识到我是非常喜欢分享自己知道的内容的，所以后面还是会坚持做这件事情。后面可能会花时间专门学一学<code>final cut pro</code>，对录制的内容做一些剪辑给观看者一个更好的体验。后面也计划出一些免费的技术类教程，给想要学习相关技术的朋友一些帮助，私心是教别人的时候自己能够对这些内容的理解更加深刻。</p>
+<h2 id="心态"><a href="#心态" class="headerlink" title="心态"></a>心态</h2><h5 id="越学越菜"><a href="#越学越菜" class="headerlink" title="越学越菜"></a>越学越菜</h5><p>倒不是说自己的能力退步了，而是觉得不知者无畏，刚毕业的时候学会了什么东西之后就感觉自己非常的厉害，走路都能走出六亲不认的步伐。现在东西懂的越来越多，反而觉得自己和技术好的人差距很大，需要走的路还很远。</p>
+<h5 id="开始变的佛系"><a href="#开始变的佛系" class="headerlink" title="开始变的佛系"></a>开始变的佛系</h5><p>不太爱去争强好胜，看明白了有很多时间并不是争赢了就是胜利，找到一个大家都舒服的点很重要。</p>
+<h5 id="要稍微慢一点"><a href="#要稍微慢一点" class="headerlink" title="要稍微慢一点"></a>要稍微慢一点</h5><p>现在这个时代什么都图快，快餐文化、短视频成为了目前的主流，连电影都只能看解说版，以免浪费时间。但是有很多事情快了味道就变了，只有慢慢的沉浸下去才能够体会到其中的精髓。看视频、听语音确实比看文字的速度更快一些，但是我一直有一个观点，书籍从写到校正再到发布到广为推荐，那么这么书的价值是显而易见的。对于一些非常好的书，一定要花时间去看一看，光学技术是狭隘的。技术只是工具，用工具的是人，生活中要和别人接触，学一学为人处事之道，如何高效沟通，如何让自己的时间花的更有价值，如何平衡和工作和生活。不要焦虑，找好自己的节奏，慢慢的沉下心来去思考自己未来怎么走。</p>
+<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>不管生活和工作多忙，有没有时间，我总会想办法抽出一些时间写一个年末总结。从毕业开始我坚持了有6年时间了，我觉得写总结也是一个反思的过程，给过去一年画上一个句号开始一段新的旅程。想一想这一年自己有哪些进步，有哪些做的不好，接下来一年要怎么改进，新的一年又有一些什么样的计划，个人觉得花费这个时间是值得的。因为我们的每一步行动都是大脑去控制的，如果你有合理的规划，能够对事情有一个比较好的认识，那么我们的行为一定是趋向于好的方向。在公司组织的合宿分享会上，需要我们每个人回顾自己这一年有哪些变化，如果躲在舒适区不肯踏出来，那么整个人不是活了一年，而是把上一年的生活重复了一遍，我讨厌这种一成不变。</p>
+<h2 id="内在"><a href="#内在" class="headerlink" title="内在"></a>内在</h2><p>俗话说内外兼修，技术好不好能力强不强我觉得这是外在。从毕业开始这么多年，我一直在外在上面下足了功夫，我一直觉得我不是聪明的那一类人，甚至还有点拖后腿。但是我要强，越是觉得我做不成，我越是要证明给他们看我可以。另外我觉得自己能够大致按时既定计划在执行，虽然也有些计划一直在拖延，但是大方向上行动力还是很强的，所以我不能说比别人优秀，但是同一个地方出生的同一届毕业的人中我绝对不算差的。这也归功于毕业后这些年我一直把时间花在技术提升上，虽然和现在的同事相比不算优秀，但也算是能跟上大家的脚步。今年也30了，虽然不能算30而立但是需要有一些变化。不能埋头于学习技术，也要学着去提高一下自己的内在涵养。如果做好自己，如何提高情商，如何换位思考，如何与不同的人打交道都是我需要去提升的地方，因此我买了很多跟说话、情商、心理学相关的书籍，多去看看这些书让自己的内在也变的扎实起来。</p>
+<p><img src="https://image.xiaomo.info/blog/2022-01-30-130237.jpg" alt="1341643533603_.pic"></p>
+
+            
+        </div>
+        
+    </div>
+    
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2021/mySummary2021/">2021年年终总结(又是跨界的一年)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">小莫</a></p>
+        <p><span>发布时间:</span>2021-12-31, 00:00:00</p>
+        <p><span>最后更新:</span>2022-08-10, 23:53:17</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/mySummary2021/" title="2021年年终总结(又是跨界的一年)">https://blog.xiaomo.info/2021/mySummary2021/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.xiaomo.info/2021/mySummary2021/　　作者: 小莫" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2021/reactProject/">
+                    从0搭建一个react开发的脚手架
+                </a>
+            </div>
+        
+    </nav>
+
+    
+</article>
+
+
+
+<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<!--<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUkgluO"></script>-->
+
+<div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#建议直接看视频高清版"><span class="toc-number">1.</span> <span class="toc-text">建议直接看视频高清版</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作"><span class="toc-number"></span> <span class="toc-text">工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参与的项目"><span class="toc-number"></span> <span class="toc-text">参与的项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#游戏平台管理系统"><span class="toc-number">1.</span> <span class="toc-text">游戏平台管理系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#游戏平台"><span class="toc-number">2.</span> <span class="toc-text">游戏平台</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理相关"><span class="toc-number"></span> <span class="toc-text">管理相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PIC的项目"><span class="toc-number"></span> <span class="toc-text">PIC的项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#把公司官网从ctw-inc-net迁移到ctw-inc上"><span class="toc-number">1.</span> <span class="toc-text">把公司官网从ctw-inc.net迁移到ctw.inc上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据开源博客hexo二次开发了公司技术部的博客网站"><span class="toc-number">2.</span> <span class="toc-text">根据开源博客hexo二次开发了公司技术部的博客网站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上线了短连接服务"><span class="toc-number">3.</span> <span class="toc-text">上线了短连接服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开发了平台三周年庆典的活动网站"><span class="toc-number">4.</span> <span class="toc-text">开发了平台三周年庆典的活动网站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搭建前端React-vite-react-tailwind-mui-和后端Golang-go-gin-gorm-模板"><span class="toc-number">5.</span> <span class="toc-text">搭建前端React(vite+react+tailwind+mui)和后端Golang(go+gin+gorm)模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#翻译平台"><span class="toc-number">6.</span> <span class="toc-text">翻译平台</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作上的变动"><span class="toc-number"></span> <span class="toc-text">工作上的变动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术"><span class="toc-number"></span> <span class="toc-text">技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端方面"><span class="toc-number"></span> <span class="toc-text">前端方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后端方面"><span class="toc-number"></span> <span class="toc-text">后端方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Infra方面"><span class="toc-number"></span> <span class="toc-text">Infra方面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语言"><span class="toc-number"></span> <span class="toc-text">语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#日语方面"><span class="toc-number">1.</span> <span class="toc-text">日语方面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#英语方面"><span class="toc-number">2.</span> <span class="toc-text">英语方面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#兴趣"><span class="toc-number"></span> <span class="toc-text">兴趣</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#游戏"><span class="toc-number">1.</span> <span class="toc-text">游戏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#钢琴"><span class="toc-number">2.</span> <span class="toc-text">钢琴</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#滑雪"><span class="toc-number">3.</span> <span class="toc-text">滑雪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动漫"><span class="toc-number">4.</span> <span class="toc-text">动漫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#旅游"><span class="toc-number">5.</span> <span class="toc-text">旅游</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生活"><span class="toc-number"></span> <span class="toc-text">生活</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#记忆力"><span class="toc-number">1.</span> <span class="toc-text">记忆力</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#笔记"><span class="toc-number">1.1.</span> <span class="toc-text">笔记</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#todo-list"><span class="toc-number">1.2.</span> <span class="toc-text">todo list</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#学习"><span class="toc-number">1.3.</span> <span class="toc-text">学习</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#当UP主"><span class="toc-number">1.4.</span> <span class="toc-text">当UP主</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心态"><span class="toc-number"></span> <span class="toc-text">心态</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#越学越菜"><span class="toc-number">0.1.</span> <span class="toc-text">越学越菜</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#开始变的佛系"><span class="toc-number">0.2.</span> <span class="toc-text">开始变的佛系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#要稍微慢一点"><span class="toc-number">0.3.</span> <span class="toc-text">要稍微慢一点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反思"><span class="toc-number"></span> <span class="toc-text">反思</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内在"><span class="toc-number"></span> <span class="toc-text">内在</span></a>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script>
+    yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+</script>
+
+
+
+<div class="share">
+    
+
+    
+</div>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<hr/>
+<br/>
+<div style="display:block;text-align: center">
+    <a href="javascript:window.open('https://twitter.com/share?url='+encodeURIComponent(document.location.href)+'&text='+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)"
+       style="background-color: lightskyblue;border-radius: 45px;box-shadow: #767676;font-size: 14px;font-family: '微软雅黑',serif;color: whitesmoke;padding: 10px 15px;"
+    >
+        twitter分享
+    </a>
+</div>
+<br/>
+<br/>
+<div id="gitalk-container" style="margin: 1% 3%"></div>
+<h3 style="text-align: center">如果想及时收到回复,可在 <a href="https://github.com/settings/notifications" target="_blank">订阅中心</a>的 <code>Participating</code>中勾选Email</h3>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '9772f6a6fdb199a60ba1',
+        clientSecret: '9a606af21688d2d4ff2efa2467ee82e76e1e9865',
+        id: window.location.pathname,
+        repo: 'blog',
+        owner: 'houko',
+        admin: 'houko',
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2021/reactProject/" title="下一篇: 从0搭建一个react开发的脚手架">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/mySummary2021/">2021年年终总结(又是跨界的一年)</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/reactProject/">从0搭建一个react开发的脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/japanNyuyin2/">日本医疗制度之限度額適用認定証</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/ohmytmux/">我的tmux之旅（tmux使用详解）</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/doTween/">(转)doTween插件使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/mySecondFiveYearsLifePlan/">2020年年终总结和第二个长期学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/newmanCommandLine/">postman和commandline tools（newman）用法介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/npmPackageCollection/">npm优秀库使用收集整理(长期向)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/jsCommonUtilsMethods/">js/ts常用公有方法收集整理(长期向)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/springBootWithSpringSecurity/">spring cloud集成spring security</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/flyway/">使用flyway版本控制工具维护数据库表</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/autoFormatOnSvae/">使用IDEA保存时自动格式化代码配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/vueSSRNuxt/">nuxt.js使用介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/webAppleSignIn/">web端接入apple Sign in流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/pm2UseApi/">node项目监控工具之pm2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/browserEventLoop/">聊聊Javascript的事件循环(转载)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/vueFrameworkVuex/">vue框架状态管理之vuex</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/backToJapan/">疫情下的回日坎坷路</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/unityInterviewQuestions/">unity常见面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/my2019Summary/">2019年年终总结（作为前端开发这一年）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/worldServerGame/">经历了几场面试后的全球同服架构思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/japanKannjiIndex/">日语汉字速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/aboutAllVisa/">签证总结大全（工作签、在留卡加汉字、工作签证更新、家族签证等）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/javaPassByValueAndReference/">jdk源码系列-Java到底是值传递还是引用传递？</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/event20190729/">没想到有一天我逼停了电车</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/jdkSourceCodeReadThreadSleep/">jdk源码系列-Thread.sleep(0)和Thread.sleep(1)的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/restfulBestUse/">restful最佳实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/nihonnmennkyo/">小莫的日本换驾照攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/nihonnkita2kagetsu/">2018年终总结（从杭州到日本工作的心路历程）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unityFpsCommonMethod/">Fps游戏常用功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unitySceneFarAndNear/">镜头拉远拉近</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/unity3dMiniMap/">unity3d小地图</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/UGUISorting/">使用UGUI中的层级问题——以背包为例</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/UGUIServerList/">使用UGUI制作滚动列表-选服列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/aboutDockerUse/">docker应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadArrayListAndLinkedArrayList/">jdk源码系列-Java中ArrayList、LinkedList和Vector的联系与区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadCreateObject/">jdk源码系列-创建对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadClassInitOrder/">jdk源码系列-类的初始化顺序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadStringDifferent/">jdk源码系列-String,StringBuffer,StringBuilder</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadAtomicInteger/">jdk源码系列-AtomicInteger</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadConcurrentHashMap/">jdk源码系列-ConcurrentHashMap</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadInteger/">jdk源码系列-Integer</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadThreadLocal/">jdk源码系列-ThreadLocal</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadMemoryActor/">jdk源码系列-内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadIO/">jdk源码系列-深入了解IO的工作机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadThreadPool/">jdk源码系列-线程池</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadObject/">jdk源码系列-Object</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeReadNIO/">jdk源码系列-NIO</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/throwableAndException/">jdk源码系列-throwable和Exception的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/jdkSourceCodeRead/">jdk源码系列-顺序索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/myBookSheet/">我的书架</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/mainProjectJobs/">主程职责总结和反思</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/onlineProjectKen/">项目上线之后遇到的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/fastjson/">fastjson的key为非字符串的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/saikennokoto/">2017年终总结(作为主程的这一年)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/AngularEnvironment/">angular2学习笔记之基础环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/HowToAskQuestionOnStackOverFlow/">StackOverFlow提问的艺术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/oracleJavaSeSliver/">java的oracle考试认证(OCJP)之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/blackAppleSystem/">安装黑苹果的历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JapanTravel/">日本游记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/GameServerType/">游戏服务器的常用架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JavaLombok/">lombok常用注解整理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/SwiftProjectBuild/">swift项目初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/MySoftware/">我的常用软件清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/AboutObject/">关于对象的一些思考</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/MyKindle/">kindle初体验.</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/SomethingForNewCar/">我的新车常备用品</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/VimTabAutoComplete/">使用vim打开文件时tab补全忽略大小写设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/Win7OneNote/">win7系统登录不上onenote的解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/FormatDisk/">在linux系统下格式化移动硬盘的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/LinuxIdeaSetting/">linux系统环境下使用idea遇到的问题及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/JavaApiJsonFormat/">接口格式返回大小写处理.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/StartMy2017/">2016年终总结(进入游戏行业)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MysqlCommon/">mysql常用操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NormalShell/">常用shell脚本.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidUsersPermission/">Android users-permission权限列表.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidAsyncTask/">android异步任务AsyncTask.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AndroidEnvironment/">android环境搭建.</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/blogToXiaomo/">博客域名迁移(从二级域名迁移到一级域名).</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/SublimeConfig/">Sublime Text 3 使用配置与插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/HttpToHttps/">拥抱https(http全面切换到https)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootSwaggerUi/">swagger ui和spring boot集成生成api文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaLombok/">lombok简化java代码注解的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringVideo/">spring4免费全套视频教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonSeiyou/">日本动漫声优公演,来看看什么叫专业声优</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootDataFormat/">spring boot做前后分离时间格式化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringBootCors/">spring boot做前后分离的跨域问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaSpringZiliao/">spring boot相关资料</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaIdeaMaven/">Maven 与 IntelliJ IDEA 的完美结合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavaServletUpload/">使用Servlet做简单的上传功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonAnime/">喜欢的动漫</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NihonSekaku/">生活习惯的不同，造就了丰富多彩的世界</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/BangumiDongli/">《东离剑游记》</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NpmYargs/">yargs插件的使用，node.js 命令行框架 yargs 和你的程序实现交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2ApiRouter/">angular2 api整理之路由模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2ApiCommon/">angular2 api整理之通用模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptRxjsStudy/">rxjs全接触</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptDesignPattern/">javascript设计模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/2016StudyPlan/">5年学习计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2studyAnimate/">angular2学习笔记之动画效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyServiceHttp/">angular2学习笔记之服务和http</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteOther/">angular2学习笔记之小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteNgTag/">angular2学习笔记之ng2标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteEvent/">angular2学习笔记之事件和多组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Angular2StudyNoteComponent/">angular2学习笔记之基本组件和ngFor</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/PublicDns/">几个国内专用的公共 DNS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxChmod/">linux权限详细解读</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxDisk/">阿里云服务器磁盘挂载</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MarkdownTableStyle/">Markdown 表格样式调整与自适应优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/GulpUse/">gulp构建工具的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/FrontEndTools/">前端工程化工具初选</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AnkiExcelShortcuts/">Anki 记忆库之 Excel 快捷键大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/CssFontFamily/">CSS font-family 网页字体使用小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeSpider/">nodejs爬虫项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Package.jsonScripts/">package.json常用script</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NpmModulesShare/">npm模块分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MongodbUse/">mongodb数据库的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/KoaGenerator/">koa生成器,一键生成koa和koa2项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeKoa/">nodejs框架koa学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/JavascriptSyntax/">javascript学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/Es6Syntax/">es6语法快速上手</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackLLink/">webpack进阶之loader篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackPlugins/">webpack进阶之插件篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackParams/">webpack相关命令参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeProcess/">nodejs的process模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/WebpackBasicUse/">webpack使用之基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NodeOnlineChat/">使用nodejs搭建一个简易的即时聊天软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/LinuxCrontab/">linux下使用定时器跑任务</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/AngularKeyboardEvent/">angularjs键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/NgCheckbox/">angularjs复选框</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/MarkdownSyntax/">markdown语法</a></li></ul>
+
+<style>
+    #post-nav-button a{
+        background-color: skyblue;
+    }
+</style>
+
+
+
+<script>
+    
+</script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                
+                    2016-
+                
+                2022 小莫
+                <!--                <a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备15009606号</a>-->
+            </div>
+            <div class="footer-right">
+                <a href="https://blog.xiaomo.info/" target="_blank" title="欢迎来到小莫的博客">Blog </a> Created by <a
+                        href="https://github.com/houko" target="_blank" rel="external nofollow"
+                        title="希望这里的文章对你有所帮助  v3.0">xiaomo</a>
+                <a href="/record.html"><i class="fa fa-heart animated infinite pulse"></i></a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit">总访问数:
+                            <span id="busuanzi_value_site_pv"></span>
+                        </span>
+                    </span>
+                
+                <span style="color: grey;">(<a href="https://www.upyun.com/" rel="external nofollow" target="_blank">背景随机加载-资源存储于又拍云</a>) | 本站己运行<span
+                            id="day_count">222</span>天<span id="time_now">1</span></span>
+            </div>
+        
+    </div>
+    <script src="/js/activate-power-mode.js" ></script>
+</footer>
+<script>
+    // 添加输入效果
+    POWERMODE.colorful = true; // make power mode colorful
+    POWERMODE.shake = false; // turn off shake
+    document.body.addEventListener('input', POWERMODE);
+
+    (function () {
+        function current() {
+            var d = new Date(), str = '';
+            str += d.getHours() + '小时';
+            str += d.getMinutes() + '分';
+            str += d.getSeconds() + '秒';
+            return str;
+        }
+
+        setInterval(function () {
+            $("#time_now").html(current)
+        }, 1000);
+
+        var dateFrom = new Date(2015, 9, 12);
+        var dateTo = new Date();
+        var diff = dateTo.valueOf() - dateFrom.valueOf();
+        var diff_day = parseInt(diff / (1000 * 60 * 60 * 24));
+        $("#day_count").html(diff_day);
+    })();
+</script>
+<a href="https://github.com/houko/blog"><img style="position: fixed; top: 0;left: 0;" width="140" height="140" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="https://image.xiaomo.info/blog/assets/js/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 36;
+                var randomIndex = Math.ceil(Math.random() * backgroundnum);
+                var result = randomIndex+".jpg?version="+(new Date()/1000);
+                var backgroundimg = "url(https://image.xiaomo.info/background/bg-number)".replace(/number/gi,result);
+//                console.info("加载图片"+backgroundimg);
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover","background-color":"rgba(255,255,255,0.5)","background-blend-mode":"lighten"});
+            }
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-80824007-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="https://image.xiaomo.info/blog/assets/js/mathjax.core.min.js">
+<!--<script src="https://image.xiaomo.info/blog/assets/js/mathjax.core.min.js?config=TeX-AMS-MML_HTMLorMML">-->
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1660175627924')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>
